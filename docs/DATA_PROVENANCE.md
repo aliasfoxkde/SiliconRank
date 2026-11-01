@@ -7,6 +7,8 @@ The current product data is curated in
 records; `scripts/build-api-data.cjs` bundles the seed and normalization
 code into `mcp-server/data.json`.
 
+This guide describes the checked-in implementation and must be revalidated when the seed schema, source registry, or MCP bundle pipeline changes.
+
 This is a static-data pipeline, not a live ingestion service. The
 `SourceRegistry.refreshInterval` field describes an intended refresh
 cadence; it does not itself schedule collection or prove that a source was
