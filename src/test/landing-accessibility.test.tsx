@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, beforeAll, afterEach } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import { screen } from '@testing-library/dom'
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
 import { LandingPage } from '@/pages/LandingPage'
 import { Layout } from '@/components/layout/Layout'
 import type { DeviceListItem } from '@/lib/api'
 
 // Mock matchMedia for prefers-reduced-motion
-const originalMatchMedia = window.matchMedia
 beforeAll(() => {
   window.matchMedia = vi.fn().mockImplementation((query: string) => ({
     matches: query === '(prefers-reduced-motion: reduce)',
