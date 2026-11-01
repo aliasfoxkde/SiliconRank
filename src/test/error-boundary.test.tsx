@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
-import { render, screen, act } from '@testing-library/react'
+import { screen } from '@testing-library/dom';
+import { render, act } from '@testing-library/react';
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 
 function ThrowingChild({ shouldThrow }: { shouldThrow: boolean }) {
