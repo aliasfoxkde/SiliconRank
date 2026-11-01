@@ -9,7 +9,7 @@ test.describe('BrowsePage', () => {
 
   test('search filters devices', async ({ page }) => {
     await page.goto('/browse')
-    const searchInput = page.getByLabel('Search devices').first()
+    const searchInput = page.getByPlaceholder('Search by name, vendor, or family...')
     const resultCount = page.getByRole('status')
     const before = await resultCount.textContent()
     await searchInput.fill('NVIDIA')
