@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom'
 import { ChartsPage } from '@/pages/ChartsPage'
 import { ToolsPage } from '@/pages/ToolsPage'
