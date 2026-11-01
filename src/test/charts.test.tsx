@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { ChartsPage } from '@/pages/ChartsPage'
 import * as api from '@/lib/api'
 
