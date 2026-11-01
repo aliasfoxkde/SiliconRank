@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { StatCard } from '@/components/studio/StatCard'
 import { RankingPanel } from '@/components/studio/RankingPanel'
 import type { DeviceMetricsRow } from '@/lib/api'
