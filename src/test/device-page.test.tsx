@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
 import { DevicePage } from '@/pages/DevicePage'
 import type { DeviceDetail } from '@/lib/api'
