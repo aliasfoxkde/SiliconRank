@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest'
-import { render, fireEvent } from '@testing-library/react'
+import { fireEvent } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom'
 import { ToolsPage } from '@/pages/ToolsPage'
 
