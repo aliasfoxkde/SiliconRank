@@ -70,6 +70,8 @@ See [Data provenance and freshness](docs/DATA_PROVENANCE.md) for the source
 registry, measured-versus-derived fields, price conditions, and the current
 static-data refresh boundary.
 
+The data provenance guide is reviewed against the checked-in seed and schema; it does not imply an automated ingestion or refresh service.
+
 ## Contributing
 
 ### Data Model
