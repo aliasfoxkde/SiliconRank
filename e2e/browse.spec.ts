@@ -10,8 +10,10 @@ test.describe('BrowsePage', () => {
   test('search filters devices', async ({ page }) => {
     await page.goto('/browse')
     const searchInput = page.getByLabel('Search devices').first()
+    const resultCount = page.getByRole('status')
+    const before = await resultCount.textContent()
     await searchInput.fill('NVIDIA')
-    await expect(page).toHaveURL(/q=NVIDIA/)
+    await expect(resultCount).not.toHaveText(before ?? '')
   })
 
   test('category filters work', async ({ page }) => {
