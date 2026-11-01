@@ -27,14 +27,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
       - run: npm install --no-audit --no-fund
       - run: npx vitest run --coverage
       - uses: actions/upload-artifact@v4
@@ -51,14 +43,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
       - run: npm install --no-audit --no-fund
       - run: npm run build
 
@@ -69,17 +53,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
+      - run: npm install --no-audit --no-fund
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
-      - run: npm install --no-audit --no-fund
       - run: npm run build
       - name: Run Playwright tests
         run: npx playwright test
