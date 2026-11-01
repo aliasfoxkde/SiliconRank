@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen, act, fireEvent } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/dom';
+import { render, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom'
 import { ToolsPage } from '@/pages/ToolsPage'
 

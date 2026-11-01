@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { render, screen, fireEvent, waitFor, act } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/dom';
+import { render, waitFor, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom'
 import { ComparePage } from '@/pages/ComparePage'
 import type { DeviceListItem, DeviceDetail, DeviceMetrics } from '@/lib/api'

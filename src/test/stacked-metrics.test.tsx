@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { MultiMetricComparison, PricePerfStacked } from '@/components/charts/StackedMetrics'
 
 // Mock recharts

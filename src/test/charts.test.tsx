@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { ChartsPage } from '@/pages/ChartsPage'
 import * as api from '@/lib/api'
 
@@ -21,11 +22,7 @@ vi.mock('recharts', () => ({
   Scatter: () => <div data-testid="scatter" />,
   LineChart: ({ children }: { children: React.ReactNode }) => <div data-testid="linechart">{children}</div>,
   Line: () => <div data-testid="line" />,
-  XAxis: () => <div data-testid="x-axis" />,
-  YAxis: () => <div data-testid="y-axis" />,
   ZAxis: () => <div data-testid="z-axis" />,
-  CartesianGrid: () => <div data-testid="grid" />,
-  Tooltip: () => <div data-testid="tooltip" />,
   Legend: () => <div data-testid="legend" />,
   RadarChart: ({ children }: { children: React.ReactNode }) => <div data-testid="radarchart">{children}</div>,
   Radar: () => <div data-testid="radar" />,

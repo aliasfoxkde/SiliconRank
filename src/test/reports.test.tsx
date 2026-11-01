@@ -1,5 +1,6 @@
-import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { describe, it, expect, vi } from 'vitest'
+import { screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { TopPerformersReport } from '@/components/reports/TopPerformersReport'
 import { DataGapsReport } from '@/components/reports/DataGapsReport'
 import { LaunchTimelineReport } from '@/components/reports/LaunchTimelineReport'
