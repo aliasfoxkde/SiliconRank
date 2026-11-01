@@ -17,6 +17,12 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund --legacy-peer-deps
+      - name: Preserve generated npm lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-package-lock
+          path: package-lock.json
+          retention-days: 3
       - run: npx tsc -b --noEmit
       - run: npm run lint
 
