@@ -11,7 +11,7 @@ Compare CPUs, GPUs, NPUs, SBCs, AI accelerators, and more — all in one place, 
 - **Efficiency metrics** — Performance per dollar, performance per watt, effective INT8 TOPS
 - **Interactive charts** — Scatter plots, bar charts, and more with Recharts
 - **Side-by-side comparison** — Compare up to 6 devices across all specs and benchmarks
-- **Device profiles** — Detailed specs, benchmark history, price tracking, and data provenance
+- **Device profiles** — Sourced specs, benchmark results, and price snapshots with source, confidence, condition, region, and observation metadata; data is curated, not a live market feed
 - **Global search** — Find any device by name, vendor, or family
 - **Faceted filtering** — Filter by category, vendor, TDP, price, and more
 - **PWA** — Install as a native app on any device with fullscreen support
@@ -63,6 +63,14 @@ npm run deploy
 ## Live Demo
 
 Deployed at [siliconrank.pages.dev](https://siliconrank.pages.dev)
+
+## Data provenance and freshness
+
+See [Data provenance and freshness](docs/DATA_PROVENANCE.md) for the source
+registry, measured-versus-derived fields, price conditions, and the current
+static-data refresh boundary.
+
+The data provenance guide is reviewed against the checked-in seed and schema; it does not imply an automated ingestion or refresh service.
 
 ## Contributing
 
