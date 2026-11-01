@@ -5,6 +5,7 @@ import { MemoryRouter, Routes, Route } from 'react-router-dom'
 import { LandingPage } from '@/pages/LandingPage'
 import { Layout } from '@/components/layout/Layout'
 import type { DeviceListItem } from '@/lib/api'
+import type { DeviceCategory } from '@/types'
 
 // Mock matchMedia for prefers-reduced-motion
 beforeAll(() => {
@@ -25,19 +26,19 @@ afterEach(() => {
 })
 
 // Mock data helpers
-const makeDevice = (id: string, name: string, category: string): DeviceListItem =>
+const makeDevice = (id: string, name: string, category: DeviceCategory): DeviceListItem =>
   ({
     device: {
       deviceId: id,
       modelName: name,
       familyId: 'f1',
-      category: category as any,
+      category,
       vendorId: 'v1',
       architecture: 'Test',
       launchDate: '2024-01-01',
     },
     vendor: { vendorId: 'v1', name: 'TestVendor', website: 'https://test.com', country: 'US' },
-    family: { familyId: 'f1', name: 'TestFamily', category: category as any, vendorId: 'v1', architecture: 'Test', deviceIds: [id] },
+    family: { familyId: 'f1', name: 'TestFamily', category, vendorId: 'v1', architecture: 'Test', deviceIds: [id] },
     metrics: { effectiveInt8Tops: 100, topsPerDollar: 0.5, topsPerWatt: 2, perfPerDollar: 10, perfPerWatt: 50, dataCompleteness: 0.8 },
   }) as unknown as DeviceListItem
 
