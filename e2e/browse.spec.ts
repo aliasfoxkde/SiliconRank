@@ -9,10 +9,9 @@ test.describe('BrowsePage', () => {
 
   test('search filters devices', async ({ page }) => {
     await page.goto('/browse')
-    const searchInput = page.getByLabel('Search devices')
+    const searchInput = page.getByLabel('Search devices').first()
     await searchInput.fill('NVIDIA')
-    await page.waitForTimeout(300)
-    await expect(page.getByRole('status')).toBeVisible()
+    await expect(page).toHaveURL(/q=NVIDIA/)
   })
 
   test('category filters work', async ({ page }) => {
@@ -20,7 +19,7 @@ test.describe('BrowsePage', () => {
     const gpuButton = page.getByRole('button', { name: 'GPU' })
     await gpuButton.click()
     await page.waitForTimeout(100)
-    await expect(gpuButton.getAttribute('aria-pressed')).toBe('true')
+    await expect(gpuButton).toHaveAttribute('aria-pressed', 'true')
   })
 
   test('export buttons exist', async ({ page }) => {
@@ -33,7 +32,7 @@ test.describe('BrowsePage', () => {
 test.describe('LandingPage', () => {
   test('loads and displays hero', async ({ page }) => {
     await page.goto('/')
-    await expect(page.getByRole('heading', { name: /siliconrank/i })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /compare every chip/i })).toBeVisible()
   })
 
   test('category cards are clickable', async ({ page }) => {
@@ -61,13 +60,13 @@ test.describe('ChartsPage', () => {
   test('tab switching works', async ({ page }) => {
     await page.goto('/charts')
     await page.getByRole('tab', { name: 'Performance' }).click()
-    await expect(page.getByRole('tab', { name: 'Performance' }).getAttribute('aria-selected')).toBe('true')
+    await expect(page.getByRole('tab', { name: 'Performance' })).toHaveAttribute('aria-selected', 'true')
   })
 
   test('value tab works', async ({ page }) => {
     await page.goto('/charts')
     await page.getByRole('tab', { name: 'Value' }).click()
-    await expect(page.getByRole('tab', { name: 'Value' }).getAttribute('aria-selected')).toBe('true')
+    await expect(page.getByRole('tab', { name: 'Value' })).toHaveAttribute('aria-selected', 'true')
   })
 })
 
@@ -95,7 +94,7 @@ test.describe('ReportsPage', () => {
   test('tab switching works', async ({ page }) => {
     await page.goto('/reports')
     await page.getByRole('tab', { name: 'Top Performers' }).click()
-    await expect(page.getByRole('tab', { name: 'Top Performers' }).getAttribute('aria-selected')).toBe('true')
+    await expect(page.getByRole('tab', { name: 'Top Performers' })).toHaveAttribute('aria-selected', 'true')
   })
 })
 
@@ -113,6 +112,6 @@ test.describe('DocsPage', () => {
   test('tabs switch correctly', async ({ page }) => {
     await page.goto('/docs')
     await page.getByRole('tab', { name: 'Types' }).click()
-    await expect(page.getByRole('tab', { name: 'Types' }).getAttribute('aria-selected')).toBe('true')
+    await expect(page.getByRole('tab', { name: 'Types' })).toHaveAttribute('aria-selected', 'true')
   })
 })
