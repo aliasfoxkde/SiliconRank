@@ -163,11 +163,6 @@ describe('BrowsePage', () => {
       )
       // Vendor buttons should be present (vendors from seed data)
       const buttons = screen.getAllByRole('button')
-      const vendorButtons = buttons.filter(btn => {
-        const pressed = btn.getAttribute('aria-pressed')
-        return pressed !== null && !['true', 'false'].includes(btn.textContent || '')
-      })
-      // At minimum we should have some vendor buttons
       expect(buttons.length).toBeGreaterThan(5)
     })
 
@@ -562,8 +557,6 @@ describe('BrowsePage', () => {
       })
 
       // Empty state should appear
-      const emptyMsg = screen.queryByText(/No devices match/)
-      // It may or may not appear depending on data - this is a conditional render
     })
   })
 })
