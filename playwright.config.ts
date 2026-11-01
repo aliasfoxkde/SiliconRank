@@ -17,9 +17,10 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: process.env.CI ? undefined : {
-    command: 'npm run preview',
-    url: 'http://localhost:4173',
+  webServer: {
+    command: 'npm run preview -- --host 0.0.0.0',
+    url: 'http://127.0.0.1:4173',
     reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
   },
 })
