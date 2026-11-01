@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test'
 
+// Keep browser checks aligned with the accessible UI and debounced filter state.
+
 test.describe('BrowsePage', () => {
   test('loads and displays device table', async ({ page }) => {
     await page.goto('/browse')
